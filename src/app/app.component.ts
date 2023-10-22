@@ -120,7 +120,6 @@ export class AppComponent {
 
             {
               width: '50%',
-              style: 'border',
               stack: [
 
                 {
@@ -129,15 +128,44 @@ export class AppComponent {
                   fontSize: 15,
                   decoration: 'underline',
                 },
+
                 {
-                  text: `Cedula: ${this.facturaHeader.cedulaCliente}`,
-                  fontSize: 14,
-                  marginTop: 2
+                  columns: [
+                    {
+                      width: 'auto',
+                      text: 'Cédula: ',
+                      bold: true,
+                      fontSize: 14,
+                      marginTop: 2,
+                    },
+                    {
+                      width: 'auto',
+                      alignment: 'left',
+                      text: this.facturaHeader.cedulaCliente,
+                      fontSize: 14,
+                      marginTop: 2,
+                      marginLeft: 13,
+                    },
+                  ]
                 },
                 {
-                  text: `Nombre: ${this.facturaHeader.nombreCliente}`,
-                  fontSize: 14,
+                  columns: [
+                    {
+                      width: 'auto',
+                      text: 'Nombre: ',
+                      bold: true,
+                      fontSize: 14,
+                    },
+                    {
+                      width: 'auto',
+                      text: this.facturaHeader.nombreCliente,
+                      alignment: 'left',
+                      fontSize: 14,
+                      marginLeft: 5,
+                    },
+                  ]
                 },
+
               ]
             },
             {
@@ -155,14 +183,15 @@ export class AppComponent {
                 {
                   columns: [
                     {
-                      width: '50%',
+                      width: '*',
                       text: 'NCF:',
                       alignment: 'right',
+                      bold: true,
                       fontSize: 14,
                       marginTop: 2
                     },
                     {
-                      width: '50%',
+                      width: '32%',
                       alignment: 'right',
                       text: this.facturaHeader.ncf,
                       fontSize: 14,
@@ -174,14 +203,15 @@ export class AppComponent {
                 {
                   columns: [
                     {
-                      width: '50%',
+                      width: '*',
                       text: 'No. Factura:',
+                      bold: true,
                       alignment: 'right',
                       fontSize: 14,
 
                     },
                     {
-                      width: '50%',
+                      width: '32%',
                       alignment: 'right',
                       text: `${this.facturaHeader.numeroFactura}`,
                       fontSize: 14,
@@ -191,15 +221,16 @@ export class AppComponent {
                 {
                   columns: [
                     {
-                      width: '50%',
-                      text: 'Fecha:',
+                      width: '*',
+                      text: 'Vencimiento:',
+                      bold: true,
                       alignment: 'right',
                       fontSize: 14, marginTop: 2
                     },
                     {
-                      width: '50%',
+                      width: '32%',
                       alignment: 'right',
-                      text: this.facturaHeader.fecha,
+                      text: this.facturaHeader.fechaVencimiento,
                       fontSize: 14,
                     },
                   ]
@@ -215,7 +246,7 @@ export class AppComponent {
           alignment: 'center',
           bold: true,
           fontSize: 15,
-          marginTop: 10,
+          marginTop: 25,
         },
 
         {
@@ -223,307 +254,33 @@ export class AppComponent {
           table: {
             // Definición de las columnas de la tabla
             headerRows: 1,
-            widths: ['*', 80, 80, 50, 80],
+            widths: ['*', 50, 80, 80, 80],
             body: [
-              [descripcionHeader, precioHeader, itbisHeader, cantidadHeader, subtotalHeader],
+              [descripcionHeader, cantidadHeader, precioHeader, itbisHeader, subtotalHeader],
               [
                 { text: 'Esta es una descripcion larga', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
                 { text: '200.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
+                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
+                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
                 { text: '$200,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
               ],
               [
-                { text: 'Descripcion', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
+                { text: 'Esta es una descripcion larga', fontSize: 12, border: [false, false, false, false] },
                 { text: '200.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
+                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
+                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
                 { text: '$200,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
               ],
               [
-                { text: 'Descripcion', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
+                { text: 'Esta es una descripcion larga', fontSize: 12, border: [false, false, false, false] },
                 { text: '200.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
+                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
+                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
                 { text: '$200,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
               ],
-              [
-                { text: 'Descripcion', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '200.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$200,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-              ],
-              [
-                { text: 'Descripcion', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '200.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$200,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-              ],
-              [
-                { text: 'Descripcion', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '200.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$200,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-              ],
-              [
-                { text: 'Descripcion', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '200.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$200,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-              ],
-              [
-                { text: 'Descripcion', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '200.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$200,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-              ],
-              [
-                { text: 'Descripcion', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '200.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$200,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-              ],
-              [
-                { text: 'Descripcion', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '200.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$200,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-              ],
-              [
-                { text: 'Descripcion', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '200.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$200,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-              ],
-              [
-                { text: 'Descripcion', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '200.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$200,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-              ],
-              [
-                { text: 'Descripcion', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '200.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$200,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-              ],
-              [
-                { text: 'Descripcion', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '200.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$200,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-              ],
-              [
-                { text: 'Descripcion', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '200.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$200,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-              ],
-              [
-                { text: 'Descripcion', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '200.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$200,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-              ],
-              [
-                { text: 'Descripcion', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '200.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$200,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-              ],
-              [
-                { text: 'Descripcion', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '200.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$200,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-              ],
-              [
-                { text: 'Descripcion', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '200.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$200,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-              ],
-              [
-                { text: 'Descripcion', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '200.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$200,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-              ],
-              [
-                { text: 'Descripcion', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '200.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$200,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-              ],
-              [
-                { text: 'Descripcion', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '200.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$200,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-              ],
-              [
-                { text: 'Descripcion', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '200.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$200,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-              ],
-              [
-                { text: 'Descripcion', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '200.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$200,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-              ],
-              [
-                { text: 'Descripcion', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '200.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$200,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-              ],
-              [
-                { text: 'Descripcion', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '200.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$200,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-              ],
-              [
-                { text: 'Descripcion', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '200.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$200,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-              ],
-              [
-                { text: 'Descripcion', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '200.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$200,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-              ],
-              [
-                { text: 'Descripcion', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '200.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$200,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-              ],
-              [
-                { text: 'Descripcion', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '200.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$200,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-              ],
-              [
-                { text: 'Descripcion', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '200.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$200,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-              ],
-              [
-                { text: 'Descripcion', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '200.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$200,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-              ],
-              [
-                { text: 'Descripcion', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '200.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$200,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-              ],
-              [
-                { text: 'Descripcion', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '200.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$200,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-              ],
-              [
-                { text: 'Descripcion', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '200.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$200,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-              ],
-              [
-                { text: 'Descripcion', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '200.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$200,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-              ],
-              [
-                { text: 'Descripcion', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '200.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$200,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-              ],
-              [
-                { text: 'Descripcion', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '200.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$200,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-              ],
-              [
-                { text: 'Descripcion', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '200.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$200,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-              ],
-              [
-                { text: 'Descripcion', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '200.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$200,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-              ],
-              [
-                { text: 'Descripcion', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '200.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$200,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-              ],
-              [
-                { text: 'Descripcion', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$100,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '200.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-                { text: '$200,000.00', alignment: 'center', fontSize: 12, border: [false, false, false, false] },
-              ],
+
 
             ],
-
-            // Definición de estilo de las celdas del cuerpo
 
           }
         },
@@ -531,30 +288,84 @@ export class AppComponent {
           text: '_____________________________________________________________________________',
           alignment: 'right',
         },
+
         {
-          text: `ITBIS: 500,000.00`,
-          fontSize: 14,
-          alignment: 'right',
-          margin: [0, 10, 0, 0]
+          columns: [
+            {
+              width: '*',
+              text: 'ITBIS:',
+              alignment: 'right',
+              fontSize: 14,
+              marginTop: 10
+            },
+            {
+              width: '20%',
+              alignment: 'right',
+              text: '$500,000.00',
+              fontSize: 14,
+              marginTop: 10,
+              marginLeft: 5
+            },
+          ]
         },
         {
-          text: `Total: 500,000.00`,
-          fontSize: 14,
-          alignment: 'right',
-          margin: [0, 10, 0, 0]
+          columns: [
+            {
+              width: '*',
+              text: 'Total:',
+              alignment: 'right',
+              fontSize: 14,
+              marginTop: 10
+            },
+            {
+              width: '20%',
+              alignment: 'right',
+              text: '$500,000.00',
+              fontSize: 14,
+              marginTop: 10,
+              marginLeft: 5
+            },
+          ]
         },
         {
-          text: `Efectivo: 1,000.00`,
-          fontSize: 14,
-          alignment: 'right',
-          margin: [0, 10, 0, 0]
+          columns: [
+            {
+              width: '*',
+              text: 'Efectivo:',
+              alignment: 'right',
+              fontSize: 14,
+              marginTop: 10
+            },
+            {
+              width: '20%',
+              alignment: 'right',
+              text: '$1,000.00',
+              fontSize: 14,
+              marginTop: 10,
+              marginLeft: 5
+            },
+          ]
         },
         {
-          text: `Cambio: 500,000.00`,
-          fontSize: 14,
-          alignment: 'right',
-          margin: [0, 10, 0, 0]
-        }
+          columns: [
+            {
+              width: '*',
+              text: 'Cambio:',
+              alignment: 'right',
+              fontSize: 14,
+              marginTop: 10
+            },
+            {
+              width: '20%',
+              alignment: 'right',
+              text: '$500,000.00',
+              fontSize: 14,
+              marginTop: 10,
+              marginLeft: 5
+            },
+          ]
+        },
+
       ],
 
 
@@ -563,12 +374,7 @@ export class AppComponent {
 
     pdfDefinition.pageMargins = [10, 10, 10, 10];
     pdfDefinition.pageSize = 'A4';
-    pdfDefinition.pageOrientation = 'portrait';
-
-
-
-
-
+    pdfDefinition.pageOrientation = 'landscape';
 
     const pdf = pdfMake.createPdf(pdfDefinition, undefined, undefined, pdfFonts.pdfMake.vfs);
     pdf.open();
