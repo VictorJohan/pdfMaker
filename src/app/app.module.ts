@@ -16,3 +16,4 @@ import { AppComponent } from './app.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+// EPSON TM-T20III Receipt

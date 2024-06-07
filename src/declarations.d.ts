@@ -1,0 +1,1 @@
+declare module 'pdfMaker/src/app/escpos.js';
