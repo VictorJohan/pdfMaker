@@ -50,10 +50,10 @@ export class AppComponent {
   impresoras: string[] = [];
 
   async ngOnInit() {
-    let p = new PrinterEscPos("http://127.0.0.1:5656/");
+    // let p = new PrinterEscPos("http://127.0.0.1:5656/");
 
-    p.setText("Hola mundo");
-    p.printerIn('EPSON TM-T20III Receipt')
+    // p.setText("Hola mundo");
+    // p.printerIn('EPSON TM-T20III Receipt')
   }
 
   async createPDF() {

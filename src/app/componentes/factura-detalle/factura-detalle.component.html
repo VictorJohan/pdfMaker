@@ -1,0 +1,36 @@
+<div style="height: 8%;">
+    <input class="form-control h-100" placeholder="Code"/>
+</div>
+<div style="height: 92%;">
+    <div style="max-height: 30.8rem; overflow-y: auto;">
+
+
+        <div *ngFor="let item of articulos" class="mb-1 mt-1 card articulo">
+            <div class="row m-0">
+               <div class="col-sm">
+                <label style="font-weight: bold; color: rgb(72, 71, 71);">{{item.descripcion}}</label>
+               </div>
+               <div class="col-sm-1">
+                <label>
+                    X
+                </label>
+               </div>
+            </div>
+            <div class="row m-0 mt-3">
+                <div class="col-sm">
+                    <label>Price: ${{item.precio | number:'1.2-2'}}</label>
+                </div>
+                <div class="col-sm">
+                    <label>Quantity: {{item.cantidad | number:'1.2-2'}}</label>
+                </div>
+                <div class="col-sm">
+                    <label>Tax: ${{item.tax | number:'1.2-2'}}</label>
+                </div>
+                <div class="col-sm-1">
+                    <label>-</label>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+</div>

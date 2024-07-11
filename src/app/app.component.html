@@ -1,3 +1,18 @@
-<!-- <button (click)="createPDF()">Generar</button> -->
+<div class="m-0 row ht">
+    <div class="col-sm-4 card pt-1 m-1">
+        <app-factura-detalle></app-factura-detalle>
+    </div>
+    <div class="col-sm m-1 card ">
+        <app-accesos-factura></app-accesos-factura>
+    </div>
+</div>
+<div class="m-0 row hb">
+    <div class="col-sm-4 m-1 card p-0">
 
-<button (click)="createPDF()">Imprimir</button>
+        <app-funciones-facturacion></app-funciones-facturacion>
+
+    </div>
+    <div class="col-sm m-1 card">
+        <app-totalizacion-factura class="h-100"></app-totalizacion-factura>
+    </div>
+</div>
